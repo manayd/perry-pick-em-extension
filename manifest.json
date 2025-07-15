@@ -1,0 +1,23 @@
+{
+  "manifest_version": 3,
+  "name": "NFL Perry Game Mode Assistant",
+  "version": "1.0",
+  "description": "Suggests the best fantasy players per team during NFL Perry Game Mode.",
+  "permissions": ["scripting"],
+  "host_permissions": [
+    "https://nflperry.com/*"
+  ],
+  "content_scripts": [
+    {
+      "matches": ["https://nflperry.com/game-mode"],
+      "js": ["content.js"],
+      "run_at": "document_idle"
+    }
+  ],
+  "web_accessible_resources": [
+    {
+      "resources": ["best_fantasy_seasons.json"],
+      "matches": ["https://nflperry.com/*"]
+    }
+  ]
+}
